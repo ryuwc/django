@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>throw</h1>
+  <form action="{% url 'catch' %}" method="GET">
+    <label for="fir">첫번째 숫자</label>
+    <input type="text" id="fir" name='fir'>
+    <label for="sec">두번째 숫자</label>
+    <input type="text" id="sec" name='sec'>
+    <input type="submit">
+  </form>
+</body>
+</html>
