@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1><b>MEMOS</b></h1>
+<a href="{% url 'memos:create' %}">CREATE</a>
+<hr>
+{% for memo in memos %}
+  <p><a href="{% url 'memos:detail' memo.pk %}">{{ memo.summury }}</a></p>
+  <p>{{ memo.updated_at }}</p>
+  <hr>
+{% endfor %}
+{% endblock content %}
+

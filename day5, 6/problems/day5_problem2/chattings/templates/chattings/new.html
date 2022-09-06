@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1><b>CREATE</b></h1>
+<form action="{% url 'chattings:create' %}" method='POST'>
+  {% csrf_token %}
+  <div>
+    <label for="user">작성자: </label>
+    <input type="text" id='user' name='user' placeholder='Nickname'>
+  </div>
+  <div>
+    <label for="content">내용: </label>
+    <textarea name="content" id="content" cols="50" rows="5" placeholder='Chat!'></textarea>
+    <input type="submit">
+  </div>
+</form>
+<hr>
+<a href="{% url 'chattings:index' %}">[back]</a>
+
+{% endblock content %}
+
