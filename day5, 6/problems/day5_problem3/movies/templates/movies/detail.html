@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1><b>DETAIL</b></h1>
+<h2><b>{{ movie.pk }} 번째 글</b></h2>
+<hr>
+<p>제목 : {{ movie.title }}</p>
+<p>감독 : {{ movie.director }}</p>
+<p>코멘트 : {{ movie.comment }}</p>
+<hr>
+<a href="{% url 'movies:index' %}">[back]</a>
+
+{% endblock content %}
+
+
