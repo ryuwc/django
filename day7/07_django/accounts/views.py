@@ -5,7 +5,7 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST, require_http_methods
-from .forms import CustomUserCreationForm, CustomUserChangeForm
+from accounts.forms import CustomUserCreationForm, CustomUserChangeForm
 
 
 @require_http_methods(['GET', 'POST'])
@@ -45,11 +45,16 @@ def signup(request):
             user = form.save()   
             auth_login(request, user)   
             return redirect('articles:index')
+        print(form.errors)
+        print(123)
     else:
         form = CustomUserCreationForm()
+    
     context = {
         'form': form,
+        'error' : form.errors,
     }
+    print(context)
     return render(request, 'accounts/signup.html', context)
 
 
